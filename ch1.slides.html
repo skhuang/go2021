@@ -14385,24 +14385,24 @@ div.jp-OutputPrompt {
 <div class="slides"><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Chapter-1.-Tutorial">Chapter 1. Tutorial<a class="anchor-link" href="#Chapter-1.-Tutorial">&#182;</a></h1>
+<big><b>Chapter 1 Tutorial</b></big>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Hello,-World">Hello, World<a class="anchor-link" href="#Hello,-World">&#182;</a></h2>
+<h1 id="Hello,-World">Hello, World<a class="anchor-link" href="#Hello,-World">&#182;</a></h1>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">helloworld</span>
+<span class="o">//</span><span class="n">package</span> <span class="n">main</span>
 <span class="kn">import</span> <span class="s2">&quot;fmt&quot;</span>
-
 <span class="n">func</span> <span class="n">main</span><span class="p">(){</span>
-    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s2">&quot;Helloo000000777000, World&quot;</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s2">&quot;Helloo00000077700, World&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -14411,10 +14411,10 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">main</span><span class="p">()</span>
@@ -14425,36 +14425,15 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Helloo000000777000, World
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Command-Line-Arguments">Command-Line Arguments<a class="anchor-link" href="#Command-Line-Arguments">&#182;</a></h1>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">echo1</span>
@@ -14462,7 +14441,6 @@ div.jp-OutputPrompt {
         <span class="s2">&quot;fmt&quot;</span>
         <span class="s2">&quot;os&quot;</span>
 <span class="p">)</span>
-
 <span class="n">func</span> <span class="n">main</span><span class="p">(){</span>
     <span class="n">var</span> <span class="n">s</span><span class="p">,</span> <span class="n">sep</span> <span class="n">string</span>
     <span class="k">for</span> <span class="n">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Args</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
@@ -14478,10 +14456,10 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">Args</span> <span class="o">=</span> <span class="p">[]</span><span class="n">string</span><span class="p">{</span><span class="s2">&quot;echo2&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="p">,</span><span class="s2">&quot;-l&quot;</span><span class="p">}</span>
@@ -14494,42 +14472,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>echo2 type -l
-3</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>1 &lt;nil&gt;</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div></div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 
@@ -14560,15 +14503,14 @@ for {
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">echo2</span>
 <span class="kn">import</span> <span class="p">(</span><span class="s2">&quot;fmt&quot;</span><span class="p">;</span><span class="s2">&quot;os&quot;</span><span class="p">)</span>
-
 <span class="n">func</span> <span class="n">main</span><span class="p">(){</span>
     <span class="n">s</span><span class="p">,</span> <span class="n">sep</span> <span class="o">:=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
     <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">arg</span> <span class="o">:=</span> <span class="nb">range</span> <span class="n">os</span><span class="o">.</span><span class="n">Args</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span> <span class="p">{</span>
@@ -14584,10 +14526,10 @@ for {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">Args</span> <span class="o">=</span> <span class="p">[]</span><span class="n">string</span><span class="p">{</span><span class="s2">&quot;echo2&quot;</span><span class="p">,</span><span class="s2">&quot;ls&quot;</span><span class="p">,</span><span class="s2">&quot;-l&quot;</span><span class="p">}</span>
@@ -14599,36 +14541,14 @@ for {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>echo2 ls -l
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">Print</span> <span class="n">the</span> <span class="n">index</span> <span class="ow">and</span> <span class="n">value</span> <span class="n">of</span> <span class="n">each</span> <span class="n">of</span> <span class="n">its</span> <span class="n">arguments</span><span class="p">,</span> <span class="n">one</span> <span class="n">per</span> <span class="n">line</span><span class="o">.</span>
 <span class="kn">import</span> <span class="p">(</span><span class="s2">&quot;fmt&quot;</span><span class="p">;</span><span class="s2">&quot;os&quot;</span><span class="p">)</span>
-
 <span class="n">func</span> <span class="n">main</span><span class="p">(){</span>
     <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">arg</span> <span class="o">:=</span> <span class="nb">range</span> <span class="n">os</span><span class="o">.</span><span class="n">Args</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span> <span class="p">{</span>
         <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
@@ -14643,33 +14563,10 @@ for {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0 echo2
-1 ls
-2 -l
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">echo3</span>
@@ -14684,10 +14581,10 @@ for {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">Args</span> <span class="o">=</span> <span class="p">[]</span><span class="n">string</span><span class="p">{</span><span class="s2">&quot;echo2&quot;</span><span class="p">,</span><span class="s2">&quot;ls&quot;</span><span class="p">,</span><span class="s2">&quot;-l&quot;</span><span class="p">}</span>
@@ -14699,31 +14596,10 @@ for {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>ls -l
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="nb">print</span> <span class="n">the</span> <span class="nb">slice</span> <span class="n">of</span> <span class="n">an</span> <span class="n">array</span>
@@ -14738,10 +14614,10 @@ for {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">Args</span> <span class="o">=</span> <span class="p">[]</span><span class="n">string</span><span class="p">{</span><span class="s2">&quot;echo3&quot;</span><span class="p">,</span><span class="s2">&quot;ls&quot;</span><span class="p">,</span><span class="s2">&quot;-l&quot;</span><span class="p">}</span>
@@ -14753,28 +14629,7 @@ for {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[echo3 ls -l]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Finding-Duplicate-Lines">Finding Duplicate Lines<a class="anchor-link" href="#Finding-Duplicate-Lines">&#182;</a></h1><p>dup.txt</p>
@@ -14795,10 +14650,10 @@ design
 first
 </pre>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">dup1</span>        
@@ -14829,10 +14684,10 @@ first
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">main</span><span class="p">()</span>
@@ -14843,32 +14698,7 @@ first
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>4	design
-2	base
-2	設計
-3	first
-2	key
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div></div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
@@ -14886,10 +14716,10 @@ first
  %% literal percent sign (no operand)
 </pre>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">dup2</span>
@@ -14919,7 +14749,6 @@ first
                 <span class="p">}</span>
         <span class="p">}</span>
 <span class="p">}</span>
-
 <span class="n">func</span> <span class="n">countLines</span><span class="p">(</span><span class="n">f</span> <span class="o">*</span><span class="n">os</span><span class="o">.</span><span class="n">File</span><span class="p">,</span> <span class="n">counts</span> <span class="nb">map</span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="nb">int</span><span class="p">,</span> <span class="n">fcounts</span> <span class="nb">map</span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="n">string</span><span class="p">)</span> <span class="p">{</span>
         <span class="nb">input</span> <span class="o">:=</span> <span class="n">bufio</span><span class="o">.</span><span class="n">NewScanner</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
         <span class="k">for</span> <span class="nb">input</span><span class="o">.</span><span class="n">Scan</span><span class="p">()</span> <span class="p">{</span>
@@ -14936,10 +14765,10 @@ first
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">Args</span> <span class="o">=</span> <span class="p">[]</span><span class="n">string</span><span class="p">{</span><span class="s2">&quot;dup2&quot;</span><span class="p">,</span><span class="s2">&quot;dup.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;dup2.txt&quot;</span><span class="p">}</span>
@@ -14951,43 +14780,14 @@ first
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>dup.txt: 2	設計
-dup2.txt: 5	base
-dup2.txt: 6	key
-dup2.txt: 6	first
-dup2.txt: 2	time
-dup2.txt: 2	second
-dup2.txt: 7	design
-dup2.txt: 2	zero
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">dup3</span>
 <span class="kn">import</span> <span class="p">(</span><span class="s2">&quot;fmt&quot;</span><span class="p">;</span><span class="s2">&quot;io/ioutil&quot;</span><span class="p">;</span><span class="s2">&quot;os&quot;</span><span class="p">;</span><span class="s2">&quot;strings&quot;</span><span class="p">)</span>
-
 <span class="n">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">counts</span> <span class="o">:=</span> <span class="n">make</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="nb">int</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">filename</span> <span class="o">:=</span> <span class="nb">range</span> <span class="n">os</span><span class="o">.</span><span class="n">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">{</span>
@@ -15013,10 +14813,10 @@ dup2.txt: 2	zero
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">Args</span> <span class="o">=</span> <span class="p">[]</span><span class="n">string</span><span class="p">{</span><span class="s2">&quot;dup3&quot;</span><span class="p">,</span><span class="s2">&quot;dup.txt&quot;</span><span class="p">}</span>
@@ -15028,40 +14828,15 @@ dup2.txt: 2	zero
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2	設計
-4	design
-2	base
-2	key
-3	first
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Animated-GIFs">Animated GIFs<a class="anchor-link" href="#Animated-GIFs">&#182;</a></h1>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">lissajous</span>
@@ -15104,16 +14879,16 @@ dup2.txt: 2	zero
         <span class="o">//</span> <span class="n">the</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">random</span> <span class="n">number</span> <span class="n">generator</span> <span class="n">using</span> <span class="n">the</span> <span class="n">current</span> <span class="n">time</span><span class="o">.</span>
         <span class="o">//</span> <span class="n">Thanks</span> <span class="n">to</span> <span class="n">Randall</span> <span class="n">McPherson</span> <span class="k">for</span> <span class="n">pointing</span> <span class="n">out</span> <span class="n">the</span> <span class="n">omission</span><span class="o">.</span>
         <span class="n">rand</span><span class="o">.</span><span class="n">Seed</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">Now</span><span class="p">()</span><span class="o">.</span><span class="n">UTC</span><span class="p">()</span><span class="o">.</span><span class="n">UnixNano</span><span class="p">())</span>
-
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">os</span><span class="o">.</span><span class="n">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;web&quot;</span> <span class="p">{</span>
                 <span class="o">//!</span>+http
                 <span class="n">handler</span> <span class="o">:=</span> <span class="n">func</span><span class="p">(</span><span class="n">w</span> <span class="n">http</span><span class="o">.</span><span class="n">ResponseWriter</span><span class="p">,</span> <span class="n">r</span> <span class="o">*</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">)</span> <span class="p">{</span>
                     <span class="n">r</span><span class="o">.</span><span class="n">ParseForm</span><span class="p">()</span>
                     <span class="n">qcycles</span><span class="p">,</span><span class="n">err</span> <span class="o">:=</span> <span class="n">strconv</span><span class="o">.</span><span class="n">Atoi</span><span class="p">(</span><span class="n">strings</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">Form</span><span class="p">[</span><span class="s2">&quot;cycles&quot;</span><span class="p">],</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
-                    <span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">,</span><span class="s2">&quot;Form: %v</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">Form</span><span class="p">)</span>
-                    <span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">,</span><span class="s2">&quot;Form[cycles]: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">r</span><span class="o">.</span><span class="n">Form</span><span class="p">[</span><span class="s2">&quot;cycles&quot;</span><span class="p">])</span>
-                    <span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%d</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">qcycles</span><span class="p">)</span>
-                    <span class="n">lissajous</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+                    <span class="o">//</span><span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">,</span><span class="s2">&quot;Form: %v</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">Form</span><span class="p">)</span>
+                    <span class="o">//</span><span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">,</span><span class="s2">&quot;Form[cycles]: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">r</span><span class="o">.</span><span class="n">Form</span><span class="p">[</span><span class="s2">&quot;cycles&quot;</span><span class="p">])</span>
+                    <span class="o">//</span><span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Stdout</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">%d</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">qcycles</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span> <span class="n">qcycles</span> <span class="o">=</span> <span class="mf">5.0</span> <span class="p">}</span>
+                    <span class="n">lissajous</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">float64</span><span class="p">(</span><span class="n">qcycles</span><span class="p">))</span>
                 <span class="p">}</span>
                 <span class="n">http</span><span class="o">.</span><span class="n">HandleFunc</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
                 <span class="o">//!</span>-http
@@ -15126,17 +14901,17 @@ dup2.txt: 2	zero
         <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span>
             <span class="n">log</span><span class="o">.</span><span class="n">Fatal</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
         <span class="p">}</span>
-        <span class="n">lissajous</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+        <span class="n">lissajous</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)</span>
 <span class="p">}</span>
-
-<span class="n">func</span> <span class="n">lissajous</span><span class="p">(</span><span class="n">out</span> <span class="n">io</span><span class="o">.</span><span class="n">Writer</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">func</span> <span class="n">lissajous</span><span class="p">(</span><span class="n">out</span> <span class="n">io</span><span class="o">.</span><span class="n">Writer</span><span class="p">,</span> <span class="n">qcycles</span> <span class="n">float64</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">const</span> <span class="p">(</span>
-                <span class="n">cycles</span>  <span class="o">=</span> <span class="mi">5</span>     <span class="o">//</span> <span class="n">number</span> <span class="n">of</span> <span class="n">complete</span> <span class="n">x</span> <span class="n">oscillator</span> <span class="n">revolutions</span>
+                <span class="o">//</span><span class="n">cycles</span>  <span class="o">=</span> <span class="mi">5</span>     <span class="o">//</span> <span class="n">number</span> <span class="n">of</span> <span class="n">complete</span> <span class="n">x</span> <span class="n">oscillator</span> <span class="n">revolutions</span>
                 <span class="n">res</span>     <span class="o">=</span> <span class="mf">0.001</span> <span class="o">//</span> <span class="n">angular</span> <span class="n">resolution</span>
                 <span class="n">size</span>    <span class="o">=</span> <span class="mi">100</span>   <span class="o">//</span> <span class="n">image</span> <span class="n">canvas</span> <span class="n">covers</span> <span class="p">[</span><span class="o">-</span><span class="n">size</span><span class="o">..+</span><span class="n">size</span><span class="p">]</span>
                 <span class="n">nframes</span> <span class="o">=</span> <span class="mi">64</span>    <span class="o">//</span> <span class="n">number</span> <span class="n">of</span> <span class="n">animation</span> <span class="n">frames</span>
                 <span class="n">delay</span>   <span class="o">=</span> <span class="mi">8</span>     <span class="o">//</span> <span class="n">delay</span> <span class="n">between</span> <span class="n">frames</span> <span class="ow">in</span> <span class="mi">10</span><span class="n">ms</span> <span class="n">units</span>
         <span class="p">)</span>
+        <span class="n">cycles</span> <span class="o">:=</span> <span class="n">qcycles</span>
         <span class="n">freq</span> <span class="o">:=</span> <span class="n">rand</span><span class="o">.</span><span class="n">Float64</span><span class="p">()</span> <span class="o">*</span> <span class="mf">3.0</span> <span class="o">//</span> <span class="n">relative</span> <span class="n">frequency</span> <span class="n">of</span> <span class="n">y</span> <span class="n">oscillator</span>
         <span class="n">anim</span> <span class="o">:=</span> <span class="n">gif</span><span class="o">.</span><span class="n">GIF</span><span class="p">{</span><span class="n">LoopCount</span><span class="p">:</span> <span class="n">nframes</span><span class="p">}</span>
         <span class="n">phase</span> <span class="o">:=</span> <span class="mf">0.0</span> <span class="o">//</span> <span class="n">phase</span> <span class="n">difference</span>
@@ -15163,10 +14938,10 @@ dup2.txt: 2	zero
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">Args</span> <span class="o">=</span> <span class="p">[]</span><span class="n">string</span><span class="p">{</span><span class="s2">&quot;lissajous&quot;</span><span class="p">}</span>
@@ -15178,13 +14953,13 @@ dup2.txt: 2	zero
 </div>
 </div>
 
-</div>
+</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><img src="https://github.com/skhuang/go2019/raw/master/out4.gif" alt="SegmentLocal" title="segment"></p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
@@ -15214,6 +14989,12 @@ dup2.txt: 2	zero
 <pre>Form: map[cycles:[20]]
 Form[cycles]: [20]
 20
+Form: map[]
+Form[cycles]: []
+0
+Form: map[cycles:[20]]
+Form[cycles]: [20]
+20
 </pre>
 </div>
 </div>
@@ -15222,7 +15003,7 @@ Form[cycles]: [20]
 
 </div>
 
-</div>
+</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
@@ -15231,15 +15012,15 @@ Form[cycles]: [20]
 </ul>
 
 </div>
-</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Fetching-a-URL">Fetching a URL<a class="anchor-link" href="#Fetching-a-URL">&#182;</a></h1>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">fetch</span>
@@ -15249,7 +15030,6 @@ Form[cycles]: [20]
         <span class="s2">&quot;net/http&quot;</span>
         <span class="s2">&quot;os&quot;</span>
 <span class="p">)</span>
-
 <span class="n">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">url</span> <span class="o">:=</span> <span class="nb">range</span> <span class="n">os</span><span class="o">.</span><span class="n">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">{</span>
                 <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -15276,10 +15056,10 @@ Form[cycles]: [20]
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">Args</span> <span class="o">=</span> <span class="p">[]</span><span class="n">string</span><span class="p">{</span><span class="s2">&quot;fetch&quot;</span><span class="p">,</span><span class="s2">&quot;http://gopl.io/&quot;</span><span class="p">}</span>
@@ -15291,162 +15071,15 @@ Form[cycles]: [20]
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Status: 200 OK
-&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Transitional//EN&#34;
-	  &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&#34;&gt;
-&lt;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34;&gt;
-&lt;head&gt;
-  &lt;meta name=&#34;go-import&#34; content=&#34;gopl.io git https://github.com/adonovan/gopl.io&#34;&gt;&lt;/meta&gt;
-  &lt;title&gt;The Go Programming Language&lt;/title&gt;
-  &lt;script&gt;
-  (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,&#39;script&#39;,&#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);
-
-  ga(&#39;create&#39;, &#39;UA-68781809-1&#39;, &#39;auto&#39;);
-  ga(&#39;send&#39;, &#39;pageview&#39;);
-  &lt;/script&gt;
-  &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;style.css&#34; /&gt;
-  &lt;style&gt;
-.bio {
-	font-size:	95%;
-	text-align:	justify;
-}
-.biblio {
-	margin:		0.5em;
-	font-size:	110%;
-	line-height:	130%;
-}
-.center {
-	text-align:	center;
-}
-td {
-	padding:	0.5em 1em 0.5em 1em;
-	vertical-align: top;
-}
-#toc h1 {
-	font-size:	95%;
-	font-weight:    normal;
-}
-hr {
-	border:		0;
-	border-top:	thin solid #ccc
-}
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;table&gt;&lt;tr&gt;
-&lt;td&gt;
-  &lt;a href=&#39;http://www.informit.com/store/go-programming-language-9780134190440&#39;&gt;&lt;img border=&#39;1&#39; src=&#34;cover.png&#34; height=&#39;600&#39;/&gt;&lt;/a&gt;
-  &lt;br/&gt;
-  &lt;div style=&#39;text-align: center&#39;&gt;
-  &lt;a href=&#39;http://www.amazon.com/dp/0134190440&#39;&gt;&lt;img border=&#39;0&#39; width=&#39;150&#39; src=&#34;buyfromamazon.png&#34;/&gt;&lt;/a&gt;
-  &amp;nbsp;&amp;nbsp;&amp;nbsp;
-  &lt;a href=&#39;http://www.informit.com/store/go-programming-language-9780134190440&#39;/&gt;&lt;img border=&#39;0&#39; height=&#39;26&#39; src=&#34;informit.png&#34;/&gt;&lt;/a&gt;
-  &amp;nbsp;&amp;nbsp;&amp;nbsp;
-  &lt;a href=&#39;http://www.barnesandnoble.com/w/1121601944&#39;&gt;&lt;img border=&#39;0&#39; width=&#39;150&#39; src=&#34;barnesnoble.png&#34;/&gt;&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/br&gt;
-&lt;/td&gt;
-&lt;td width=&#39;500&#39;&gt;
-&lt;h1 class=&#39;center&#39;&gt;The Go Programming Language&lt;/h1&gt;
-&lt;p class=&#39;biblio center&#39;&gt;
-Alan A. A. Donovan &amp;middot; Brian W. Kernighan&lt;br/&gt;
-Published Oct 26, 2015 in paperback and Nov 20 in e-book&lt;br/&gt;
-Addison-Wesley; 380pp; ISBN:&amp;nbsp;978-0134190440&lt;br/&gt;
-&lt;tt&gt;authors&lt;/tt&gt;&lt;tt&gt;&amp;#0064;&lt;/tt&gt;&lt;tt&gt;gopl.io&lt;/tt&gt;
-&lt;/p&gt;
-
-&lt;!-- Table of Contents --&gt;
-&lt;div id=&#39;toc&#39;&gt;
-&lt;table&gt;&lt;tr&gt;
-&lt;td&gt;
-&lt;h1&gt;Contents [&lt;a href=&#39;ch1.pdf&#39;/&gt;PDF&lt;/a&gt;]&lt;/h1&gt;
-&lt;h1&gt;Preface  [&lt;a href=&#39;ch1.pdf&#39;/&gt;PDF&lt;/a&gt;]&lt;/h1&gt;
-&lt;h1&gt;1. Tutorial [&lt;a href=&#39;ch1.pdf&#39;/&gt;PDF&lt;/a&gt;]&lt;/h1&gt;
-&lt;h1&gt;2. Program Structure&lt;/h1&gt;
-&lt;h1&gt;3. Basic Data Types&lt;/h1&gt;
-&lt;h1&gt;4. Composite Types&lt;/h1&gt;
-&lt;h1&gt;5. Functions&lt;/h1&gt;
-&lt;h1&gt;6. Methods&lt;/h1&gt;
-&lt;/td&gt;
-&lt;td&gt;
-&lt;h1&gt;7. Interfaces&lt;/h1&gt;
-&lt;h1&gt;8. Goroutines and Channels&lt;/h1&gt;
-&lt;h1&gt;9. Concurrency with Shared Variables&lt;/h1&gt;
-&lt;h1&gt;10. Packages and the Go Tool&lt;/h1&gt;
-&lt;h1&gt;11. Testing&lt;/h1&gt;
-&lt;h1&gt;12. Reflection&lt;/h1&gt;
-&lt;h1&gt;13. Low-Level Programming&lt;/h1&gt;
-&lt;h1&gt;Index  [&lt;a href=&#39;ch1.pdf&#39;/&gt;PDF&lt;/a&gt;]&lt;/h1&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td colspan=&#39;2&#39;&gt;
-&lt;h1&gt;
-  &lt;a href=&#39;https://github.com/adonovan/gopl.io/&#39;&gt;Source code&lt;/a&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
-  &lt;a href=&#39;reviews.html&#39;&gt;Reviews&lt;/a&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
-  &lt;a href=&#39;translations.html&#39;&gt;Translations&lt;/a&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
-  &lt;a href=&#39;errata.html&#39;&gt;Errata&lt;/a&gt;
-&lt;/h1&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p class=&#34;bio&#34;&gt;
-Alan Donovan is a Staff Engineer in Google&#39;s infrastructure division,
-specializing in software development tools.  Since 2012, he has been
-working on the Go team, designing libraries and tools for static
-analysis.  He is the author of the
-&lt;a href=&#39;http://golang.org/s/oracle-user-manual&#39;&gt;&lt;code&gt;oracle&lt;/code&gt;&lt;/a&gt;,
-&lt;a href=&#39;http://golang.org/lib/godoc/analysis/help.html&#39;&gt;&lt;code&gt;godoc -analysis&lt;/code&gt;&lt;/a&gt;,
-&lt;a href=&#39;https://github.com/golang/tools/blob/master/refactor/eg/eg.go&#39;&gt;&lt;code&gt;eg&lt;/code&gt;&lt;/a&gt;,
-and &lt;a href=&#39;https://github.com/golang/tools/blob/master/refactor/rename/rename.go&#39;&gt;&lt;code&gt;gorename&lt;/code&gt;&lt;/a&gt; tools.
-&lt;/p&gt; 
-
-&lt;p class=&#34;bio&#34;&gt;
-Brian Kernighan was in the Computing Science Research center at Bell
-Labs until 2000, where he worked on languages and tools for Unix.  He
-is now a professor in the Computer Science Department at Princeton.
-He is the co-author of several books, including
-&lt;a href=&#39;http://www.amazon.com/dp/0131103628?tracking_id=disfordig-20&#39;&gt;The C Programming Language&lt;/a&gt; and
-&lt;a href=&#39;http://www.amazon.com/dp/020161586X?tracking_id=disfordig-20&#39;&gt;The Practice of Programming&lt;/a&gt;.
-
-&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Fetching-URLs-Concurrently">Fetching URLs Concurrently<a class="anchor-link" href="#Fetching-URLs-Concurrently">&#182;</a></h1>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">fetchall</span>
@@ -15488,7 +15121,7 @@ He is the co-author of several books, including
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
@@ -15503,39 +15136,15 @@ He is the co-author of several books, including
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.14s    14447  https://google.com true
-0.24s     9954  https://golang.org true
-0.71s    12946  https://godoc.org true
-1.66s     4154  http://gopl.io/ true
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="A-Web-Server">A Web Server<a class="anchor-link" href="#A-Web-Server">&#182;</a></h1>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">server1</span>
@@ -15561,7 +15170,7 @@ He is the co-author of several books, including
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
@@ -15575,7 +15184,7 @@ He is the co-author of several books, including
 </div>
 </div>
 
-</div>
+</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
@@ -15584,10 +15193,10 @@ He is the co-author of several books, including
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">server2</span>
@@ -15627,7 +15236,7 @@ He is the co-author of several books, including
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
@@ -15641,7 +15250,7 @@ He is the co-author of several books, including
 </div>
 </div>
 
-</div>
+</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
@@ -15650,10 +15259,10 @@ He is the co-author of several books, including
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span><span class="n">gopl</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">ch1</span><span class="o">/</span><span class="n">server3</span>
@@ -15691,7 +15300,7 @@ He is the co-author of several books, including
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
@@ -15705,7 +15314,7 @@ He is the co-author of several books, including
 </div>
 </div>
 
-</div>
+</div></div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
@@ -15714,15 +15323,15 @@ He is the co-author of several books, including
 </ul>
 
 </div>
-</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Loose-Ends">Loose Ends<a class="anchor-link" href="#Loose-Ends">&#182;</a></h1>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="p">(</span><span class="s2">&quot;fmt&quot;</span><span class="p">;</span><span class="s2">&quot;math&quot;</span><span class="p">;</span><span class="s2">&quot;math/rand&quot;</span><span class="p">)</span>
@@ -15762,45 +15371,7 @@ He is the co-author of several books, including
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>landed on edge!
-0
--1
-0
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>2 &lt;nil&gt;</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div></section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Packages">Packages<a class="anchor-link" href="#Packages">&#182;</a></h2><ul>
