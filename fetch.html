@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="fr-FR">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="fr-FR">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="fr-FR">
+<!--<![endif]-->
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="https://golang.io/xmlrpc.php" />
+	
+	<title>Golang I/O &#8211; Apprendre à programmer avec Go</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Golang I/O &raquo; Flux" href="https://golang.io/fr/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Golang I/O &raquo; Flux des commentaires" href="https://golang.io/fr/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/golang.io\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://golang.io/wp-includes/css/dist/block-library/style.min.css?ver=5.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='ecko_plugin_css-css'  href='https://golang.io/wp-content/plugins/eckoplugin/assets/css/eckoplugin.css?ver=5.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='nnj_plugin_css-css'  href='https://golang.io/wp-content/plugins/nanoninja-shortcode/assets/css/nnjplugin.css?ver=5.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='prismatic-highlight-css'  href='https://golang.io/wp-content/plugins/prismatic/lib/highlight/css/atom-one-dark.css' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css'  href='https://golang.io/wp-content/themes/onyx/style.css?ver=5.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='ecko_css-css'  href='https://golang.io/wp-content/themes/onyx-child/style.css?ver=1.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ecko-fonts-css'  href='//fonts.googleapis.com/css?family=Roboto%3A400%2C700%7CRoboto%3A400%2C700%7C&#038;subset=latin-ext%2Ccyrillic-ext&#038;ver=1.6.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://golang.io/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://golang.io/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://golang.io/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://golang.io/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://golang.io/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.1.3" />
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-38008322-1', 'auto');
+			ga('set', 'anonymizeIp', true);
+			ga('send', 'pageview');
+		</script>
+
+	<link rel="alternate" href="https://golang.io/fr/" hreflang="fr" />
+<link rel="alternate" href="https://golang.io/en/" hreflang="en" />
+<link rel="alternate" href="https://golang.io/" hreflang="x-default" />
+			<meta property="fb:app_id" content="" />
+			<meta property="fb:admins" content="" />
+						<meta property="og:site_name" content="Golang I/O" />
+			<meta property="og:description" content="Apprendre à programmer avec Go" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image" content="http://golang.io/wp-content/uploads/2019/03/logo-alt3.jpg" />
+								<style>
+				body, html, h6, p, .widget .rssSummary, .widget li, .widget.latestposts .meta, textarea, .footer-widgets .widget.navigation li{ font-family: Roboto; } h1, h2, h3, h4, h5, input, body.author .author-twitter, .comments-body .comments-nocomments, .comments-body .logged-in-as, .comment .comment-meta, .comment-respond #cancel-comment-reply-link, .comment-respond .submit, .cover-blog-posts .cover-post .post-category, .cover-blog-posts .cover-post .post-read-more, .cover-article-count, .filter-bar-options, .footer-post-next span, .footer-widgets .footer-widgets-static .blog-name, .footer-post-next span, nav.navigation-main ul a, nav.navigation-main ul span, nav.navigation-responsive ul a, nav.navigation-responsive ul span, .overlay-post-info .post-read-more, .pagination, .post-body .post-category, .post-body .post-meta, .post-footer .post-tags a, .post-footer .post-share .post-share-title, .post-related .post-related-post span, .post-related .post-related-post .post-category, .post-related .post-related-post .post-title, .post-related .post-related-post .post-read-more, .post-contents blockquote p, .postcontents blockquote p, .page-contents.post-list-masonry .post .post-external-link, .page-contents.post-list-masonry .post .post-category, .page-contents.post-list-masonry .post .post-meta, .page-contents.post-list-masonry .post.format-quote .post-quote blockquote p, .page-contents.post-list-standard .post .post-external-link, .page-contents.post-list-standard .post .post-date, .page-contents.post-list-standard .post .post-category, .page-contents.post-list-standard .post .post-meta, .page-contents.post-list-standard .post.format-quote .post-quote blockquote p, .top-bar .top-bar-logo, .widget li span.count, .widget.authorprofile .meta .title, .widget.authorprofile .meta .twittertag , .widget.authorprofile .meta h3, .widget .tagcloud a, .widget.twitter .author, .widget.twitter .date, .widget.socialshare .sharebutton, .widget.latestposts h5, .widget.relatedposts .category, .widget.randomposts .category, .widget.navigation li, #wp-calendar, .post-show-comments, .post-contents q, .postcontents q{ font-family: Roboto; } 			</style>
+					<style type="text/css">
+
+								
+								
+												
+																
+																					.page-contents.post-list .post .post-meta .post-meta-date{ display: none; }
+					.page-contents.post-list-standard .post .post-date{ display: none; }
+					.page-contents.post-list-standard .post .post-right-align{ width: 100%; }
+																								
+												
+																	body.single .cover-content .post-meta .post-author{ display: none; }
+					body.single .post-body .post-author{ display: none; }
+																									body.single .post-footer .post-share{ display: none; }
+																												
+													body.page .cover-content .post-meta .post-author{ display: none; }
+					body.page .post-header .post-meta .post-author{ display: none; }
+					body.page .post-author-profile{ display: none; }
+					body.page .post-footer, body.page .post-share{ margin-bottom: 0; padding-bottom: 0; }
+													body.page .cover-content .post-meta .post-date{ display: none; }
+					body.page .post-header .post-meta .post-date{ display: none; }
+													body.page .cover-content .post-meta .post-comments{ display: none; }
+					body.page .post-header .post-meta .post-comments{ display: none; }
+																				
+																
+																	.footer-copyright-disclaimer .wordpress{ display: none; }
+													.footer-copyright-disclaimer .ecko{ display: none; }
+				
+								
+			 </style>
+				<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+				<style type="text/css" id="wp-custom-css">
+			pre {
+	padding: 0;
+}
+
+.hljs {
+	  padding: 20px 10px;
+    font-size: 15px !important;
+    line-height: 22px;
+	    border-radius: 4px;
+}
+		</style>
+		</head>
+
+<body class="home blog dark-theme page-layout-masonry" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	
+	
+	<section class="top-bar top-bar-overlay ">
+		<div class="wrapper">
+			<div class="top-bar-logo">
+									<a href="https://golang.io/fr/" itemprop="headline">Golang I/O</a>
+							</div>
+			<nav class="navigation-responsive">
+				<i class="show-nav fa fa-navicon"></i>
+				<ul id="menu-main-fr" class="menu"><li id="menu-item-7" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7"><a href="https://golang.io/fr/actualites/">Actualités</a></li>
+<li id="menu-item-122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-122"><a href="https://golang.io/fr/cours/">Cours</a>
+<ul class="sub-menu">
+	<li id="menu-item-198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198"><a href="https://golang.io/fr/cours/apprendre-a-programmer-en-go/">Apprendre à programmer en Go</a></li>
+</ul>
+</li>
+<li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="https://golang.io/fr/tutoriels/">Tutoriels</a></li>
+<li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="https://golang.io/fr/videos/">Vidéos</a></li>
+</ul>			</nav>
+			<nav class="navigation-main">
+				<ul id="menu-main-fr-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7"><a href="https://golang.io/fr/actualites/">Actualités</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-122"><a href="https://golang.io/fr/cours/">Cours</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198"><a href="https://golang.io/fr/cours/apprendre-a-programmer-en-go/">Apprendre à programmer en Go</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="https://golang.io/fr/tutoriels/">Tutoriels</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="https://golang.io/fr/videos/">Vidéos</a></li>
+</ul>			</nav>
+		</div>
+	</section>
+
+	
+	<header class="cover cover-blog">
+		<div class="cover-background cover-post-background-1" style="background-image: url('https://golang.io/wp-content/uploads/2019/03/dotGo-1920x1280.jpg');"></div>
+		<div class="cover-background cover-post-background-2"></div>
+		<div class="cover-background cover-post-background-3"></div>
+		<div class="cover-shadow"></div>
+		<div class="cover-load-indicator"></div>
+		<div class="cover-content wrapper">
+			<section class="cover-blog-description">
+								<p class="cover-blog-info">Découvrir et apprendre Go</p>
+				<div class="cover-mouse scroll-cover">
+					<div class="cover-mouse-scroll"></div>
+				</div>
+			</section>
+			<section class="cover-blog-posts">
+								<article class="cover-post cover-post-1" data-post-id="1" data-background-image="https://golang.io/wp-content/uploads/2019/03/dotGo-1920x1280.jpg">
+					<a href="https://golang.io/fr/actualites/conference-dotgo-2019/" class="post-category" data-category-color="#6c5ce7">Actualités</a>
+					<h2 class="post-title"><a href="https://golang.io/fr/actualites/conference-dotgo-2019/">Conférence dotGo 2019</a></h2>
+					<p class="post-excerpt">Hello Gophers, Le 25 mars prochain à Paris aura lieu la cinquième édition de la conférence Européenne dotGo. dotGo est la plus grande conférence Européenne...</p>
+					<a href="https://golang.io/fr/actualites/conference-dotgo-2019/" class="post-read-more">Lire la suite <i class="fa fa-chevron-right"></i></a>
+				</article>
+								<article class="cover-post cover-post-2" data-post-id="2" data-background-image="https://golang.io/wp-content/uploads/2016/09/doGot_GolangBirthdate-1920x1280.jpg">
+					<a href="https://golang.io/fr/actualites/conference-dotgo-2016/" class="post-category" data-category-color="#6c5ce7">Actualités</a>
+					<h2 class="post-title"><a href="https://golang.io/fr/actualites/conference-dotgo-2016/">Conférence dotGo 2016</a></h2>
+					<p class="post-excerpt">-20% sur la billetterie dotGo pour les membres de Golang.io dotGo, la conférence européenne sur le thème du langage Go aura lieu au cours du mois...</p>
+					<a href="https://golang.io/fr/actualites/conference-dotgo-2016/" class="post-read-more">Lire la suite <i class="fa fa-chevron-right"></i></a>
+				</article>
+								<article class="cover-post cover-post-3" data-post-id="3" data-background-image="https://golang.io/wp-content/uploads/2016/07/GolangMiddlewareRussionDoll-1920x1080.jpg">
+					<a href="https://golang.io/fr/tutoriels/les-middlewares-avec-go/" class="post-category" data-category-color="#16a085">Tutoriels</a>
+					<h2 class="post-title"><a href="https://golang.io/fr/tutoriels/les-middlewares-avec-go/">Les Middlewares Avec Go</a></h2>
+					<p class="post-excerpt">Introduction Dans les articles précédents, nous avons abordé le principe des Handlers. Leurs utilisations pour afficher de simples pages reste accessibles même...</p>
+					<a href="https://golang.io/fr/tutoriels/les-middlewares-avec-go/" class="post-read-more">Lire la suite <i class="fa fa-chevron-right"></i></a>
+				</article>
+							</section>
+		</div>
+	</header>
+
+	
+	
+	<section class="filter-bar filter-bar-categories">
+		<div class="wrapper">
+			<ul class="filter-bar-options">
+				<li class="title">Categories</li>
+				<li class="active"><a href="https://golang.io/fr/" class="filter-all" data-category-color="">Tout</a></li>
+								<li ><a href="https://golang.io/fr/actualites/" data-category-color="#6c5ce7">Actualités</a></li>
+								<li ><a href="https://golang.io/fr/tutoriels/" data-category-color="#16a085">Tutoriels</a></li>
+								<li ><a href="https://golang.io/fr/videos/" data-category-color="#2980b9">Vidéos</a></li>
+							</ul>
+			<a class="filter-bar-search show-search" href="#"><i class="fa fa-search"></i></a>
+		</div>
+	</section>
+
+	
+	<section class="page-container wrapper">
+
+		
+	
+		<section class="page-contents post-list post-list-masonry">
+			<div class="post-list-posts">
+				
+	<article id="post-413" class="post-413 post type-post status-publish format-standard has-post-thumbnail hentry category-actualites">
+				<div class="post-header-image">
+			<a href="https://golang.io/fr/actualites/conference-dotgo-2019/"><img src="https://golang.io/wp-content/uploads/2019/03/dotGo-500x333.jpg" alt="Conférence dotGo 2019"></a>
+		</div>
+				<div class="post-info">
+			<a class="post-category category-fade" style="background:#6c5ce7;" data-category-color="#6c5ce7" href="https://golang.io/fr/actualites/">Actualités</a>			<h1 class="post-title"><a href="https://golang.io/fr/actualites/conference-dotgo-2019/">Conférence dotGo 2019</a></h1>
+			<p class="post-excerpt">Hello Gophers, Le 25 mars prochain à Paris aura lieu la cinquième édition de la conférence Européenne dotGo. dotGo est la plus grande conférence Européenne dédiée au langage de programmation Go. Cette manifestation...</p>
+			<ul class="post-meta">
+				<li class="post-pinned post-meta-align-left"><i class="fa fa-thumb-tack"></i></li>
+				<li class="post-meta-comments post-meta-align-left"><a href="https://golang.io/fr/actualites/conference-dotgo-2019/#comments"><i class="fa fa-comments"></i>0</a></li>
+				<li class="post-meta-likes post-meta-align-left"><span class="sl-wrapper"><a href="https://golang.io/wp-admin/admin-ajax.php?action=process_simple_like&nonce=89291a5a67&post_id=413&disabled=true&is_comment=0" rel="nofollow" class="sl-button sl-button-413" data-nonce="89291a5a67" data-post-id="413" data-iscomment="0" title="J’aime"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"/></svg></span><span class="sl-count">0</span></a><span class="sl-loader"></span></span></li>
+				<li class="post-meta-date post-meta-align-right"><a href="https://golang.io/fr/actualites/conference-dotgo-2019/"><time datetime="2019-03-16">8 mois ago</time></a></li>
+			</ul>
+		</div>
+	</article>
+
+	<article id="post-212" class="post-212 post type-post status-publish format-standard has-post-thumbnail hentry category-actualites tag-conference tag-dotgo-2016 tag-golang">
+				<div class="post-header-image">
+			<a href="https://golang.io/fr/actualites/conference-dotgo-2016/"><img src="https://golang.io/wp-content/uploads/2016/09/doGot_GolangBirthdate-500x333.jpg" alt="Conférence dotGo 2016"></a>
+		</div>
+				<div class="post-info">
+			<a class="post-category category-fade" style="background:#6c5ce7;" data-category-color="#6c5ce7" href="https://golang.io/fr/actualites/">Actualités</a>			<h1 class="post-title"><a href="https://golang.io/fr/actualites/conference-dotgo-2016/">Conférence dotGo 2016</a></h1>
+			<p class="post-excerpt">-20% sur la billetterie dotGo pour les membres de Golang.io dotGo, la conférence européenne sur le thème du langage Go aura lieu au cours du mois d&rsquo;Octobre au sein de la capitale. En effet le 10 Octobre...</p>
+			<ul class="post-meta">
+				<li class="post-pinned post-meta-align-left"><i class="fa fa-thumb-tack"></i></li>
+				<li class="post-meta-comments post-meta-align-left"><a href="https://golang.io/fr/actualites/conference-dotgo-2016/#comments"><i class="fa fa-comments"></i>0</a></li>
+				<li class="post-meta-likes post-meta-align-left"><span class="sl-wrapper"><a href="https://golang.io/wp-admin/admin-ajax.php?action=process_simple_like&nonce=89291a5a67&post_id=212&disabled=true&is_comment=0" rel="nofollow" class="sl-button sl-button-212" data-nonce="89291a5a67" data-post-id="212" data-iscomment="0" title="J’aime"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"/></svg></span><span class="sl-count">1</span></a><span class="sl-loader"></span></span></li>
+				<li class="post-meta-date post-meta-align-right"><a href="https://golang.io/fr/actualites/conference-dotgo-2016/"><time datetime="2016-09-13">3 années ago</time></a></li>
+			</ul>
+		</div>
+	</article>
+
+	<article id="post-203" class="post-203 post type-post status-publish format-standard has-post-thumbnail hentry category-tutoriels tag-handler tag-http tag-middleware tag-web">
+				<div class="post-header-image">
+			<a href="https://golang.io/fr/tutoriels/les-middlewares-avec-go/"><img src="https://golang.io/wp-content/uploads/2016/07/GolangMiddlewareRussionDoll-500x281.jpg" alt="Les Middlewares Avec Go"></a>
+		</div>
+				<div class="post-info">
+			<a class="post-category category-fade" style="background:#16a085;" data-category-color="#16a085" href="https://golang.io/fr/tutoriels/">Tutoriels</a>			<h1 class="post-title"><a href="https://golang.io/fr/tutoriels/les-middlewares-avec-go/">Les Middlewares Avec Go</a></h1>
+			<p class="post-excerpt">Introduction Dans les articles précédents, nous avons abordé le principe des Handlers. Leurs utilisations pour afficher de simples pages reste accessibles même pour les débutants. Cependant cela se complique un peu...</p>
+			<ul class="post-meta">
+				<li class="post-pinned post-meta-align-left"><i class="fa fa-thumb-tack"></i></li>
+				<li class="post-meta-comments post-meta-align-left"><a href="https://golang.io/fr/tutoriels/les-middlewares-avec-go/#comments"><i class="fa fa-comments"></i>0</a></li>
+				<li class="post-meta-likes post-meta-align-left"><span class="sl-wrapper"><a href="https://golang.io/wp-admin/admin-ajax.php?action=process_simple_like&nonce=89291a5a67&post_id=203&disabled=true&is_comment=0" rel="nofollow" class="sl-button sl-button-203" data-nonce="89291a5a67" data-post-id="203" data-iscomment="0" title="J’aime"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"/></svg></span><span class="sl-count">11</span></a><span class="sl-loader"></span></span></li>
+				<li class="post-meta-date post-meta-align-right"><a href="https://golang.io/fr/tutoriels/les-middlewares-avec-go/"><time datetime="2016-07-16">3 années ago</time></a></li>
+			</ul>
+		</div>
+	</article>
+
+	<article id="post-100" class="post-100 post type-post status-publish format-standard has-post-thumbnail hentry category-actualites tag-atelier tag-bootcamp tag-meetup tag-paris tag-rencontre tag-web tag-workshop">
+				<div class="post-header-image">
+			<a href="https://golang.io/fr/actualites/workshop-go-apprenez-a-developper-pour-le-web/"><img src="https://golang.io/wp-content/uploads/2019/03/golang-cover-500x281.jpg" alt="Workshop Go &#8211; Apprenez à développer pour le Web"></a>
+		</div>
+				<div class="post-info">
+			<a class="post-category category-fade" style="background:#6c5ce7;" data-category-color="#6c5ce7" href="https://golang.io/fr/actualites/">Actualités</a>			<h1 class="post-title"><a href="https://golang.io/fr/actualites/workshop-go-apprenez-a-developper-pour-le-web/">Workshop Go &#8211; Apprenez à développer pour le Web</a></h1>
+			<p class="post-excerpt">Nous organisons en collaboration avec le BDE BeApi de l&rsquo;école IPSSI un Workshop pour apprendre le langage Go à travers le Web. Lors de ce Meetup qui se déroulera sur une journée (de 10h00 à 17h00) vous...</p>
+			<ul class="post-meta">
+				<li class="post-pinned post-meta-align-left"><i class="fa fa-thumb-tack"></i></li>
+				<li class="post-meta-comments post-meta-align-left"><a href="https://golang.io/fr/actualites/workshop-go-apprenez-a-developper-pour-le-web/#comments"><i class="fa fa-comments"></i>0</a></li>
+				<li class="post-meta-likes post-meta-align-left"><span class="sl-wrapper"><a href="https://golang.io/wp-admin/admin-ajax.php?action=process_simple_like&nonce=89291a5a67&post_id=100&disabled=true&is_comment=0" rel="nofollow" class="sl-button sl-button-100" data-nonce="89291a5a67" data-post-id="100" data-iscomment="0" title="J’aime"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"/></svg></span><span class="sl-count">21</span></a><span class="sl-loader"></span></span></li>
+				<li class="post-meta-date post-meta-align-right"><a href="https://golang.io/fr/actualites/workshop-go-apprenez-a-developper-pour-le-web/"><time datetime="2015-05-03">4 années ago</time></a></li>
+			</ul>
+		</div>
+	</article>
+
+	<article id="post-95" class="post-95 post type-post status-publish format-standard has-post-thumbnail hentry category-tutoriels tag-container tag-deploiement tag-docker tag-image">
+				<div class="post-header-image">
+			<a href="https://golang.io/fr/tutoriels/deployer-un-serveur-go-avec-docker/"><img src="https://golang.io/wp-content/uploads/2016/05/Docker-500x313.jpg" alt="Déployer un serveur Go avec Docker"></a>
+		</div>
+				<div class="post-info">
+			<a class="post-category category-fade" style="background:#16a085;" data-category-color="#16a085" href="https://golang.io/fr/tutoriels/">Tutoriels</a>			<h1 class="post-title"><a href="https://golang.io/fr/tutoriels/deployer-un-serveur-go-avec-docker/">Déployer un serveur Go avec Docker</a></h1>
+			<p class="post-excerpt">Introduction Avec l’arrivée de Docker, notre façon de déployer nos applications a changé. Alors que la virtualisation classique impose d’avoir plusieurs OS, Docker se veut bien plus léger car il n&rsquo;en utilise...</p>
+			<ul class="post-meta">
+				<li class="post-pinned post-meta-align-left"><i class="fa fa-thumb-tack"></i></li>
+				<li class="post-meta-comments post-meta-align-left"><a href="https://golang.io/fr/tutoriels/deployer-un-serveur-go-avec-docker/#comments"><i class="fa fa-comments"></i>0</a></li>
+				<li class="post-meta-likes post-meta-align-left"><span class="sl-wrapper"><a href="https://golang.io/wp-admin/admin-ajax.php?action=process_simple_like&nonce=89291a5a67&post_id=95&disabled=true&is_comment=0" rel="nofollow" class="sl-button sl-button-95" data-nonce="89291a5a67" data-post-id="95" data-iscomment="0" title="J’aime"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"/></svg></span><span class="sl-count">21</span></a><span class="sl-loader"></span></span></li>
+				<li class="post-meta-date post-meta-align-right"><a href="https://golang.io/fr/tutoriels/deployer-un-serveur-go-avec-docker/"><time datetime="2015-04-16">5 années ago</time></a></li>
+			</ul>
+		</div>
+	</article>
+
+	<article id="post-90" class="post-90 post type-post status-publish format-standard has-post-thumbnail hentry category-actualites tag-communaute tag-rencontre tag-social tag-twitter">
+				<div class="post-header-image">
+			<a href="https://golang.io/fr/actualites/suivez-nous-sur-twitter/"><img src="https://golang.io/wp-content/uploads/2016/05/Twitter-500x313.jpg" alt="Suivez-nous sur Twitter !"></a>
+		</div>
+				<div class="post-info">
+			<a class="post-category category-fade" style="background:#6c5ce7;" data-category-color="#6c5ce7" href="https://golang.io/fr/actualites/">Actualités</a>			<h1 class="post-title"><a href="https://golang.io/fr/actualites/suivez-nous-sur-twitter/">Suivez-nous sur Twitter !</a></h1>
+			<p class="post-excerpt">Pour fonctionner de paire avec la chaîne GolangTV, nous avons finalement créé un compte Twitter, la pierre incontournable d’un édifice 2.0. Ce compte a pour vocation de vous garder connecté à l’univers golang.io et...</p>
+			<ul class="post-meta">
+				<li class="post-pinned post-meta-align-left"><i class="fa fa-thumb-tack"></i></li>
+				<li class="post-meta-comments post-meta-align-left"><a href="https://golang.io/fr/actualites/suivez-nous-sur-twitter/#comments"><i class="fa fa-comments"></i>0</a></li>
+				<li class="post-meta-likes post-meta-align-left"><span class="sl-wrapper"><a href="https://golang.io/wp-admin/admin-ajax.php?action=process_simple_like&nonce=89291a5a67&post_id=90&disabled=true&is_comment=0" rel="nofollow" class="sl-button sl-button-90" data-nonce="89291a5a67" data-post-id="90" data-iscomment="0" title="J’aime"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"/></svg></span><span class="sl-count">20</span></a><span class="sl-loader"></span></span></li>
+				<li class="post-meta-date post-meta-align-right"><a href="https://golang.io/fr/actualites/suivez-nous-sur-twitter/"><time datetime="2015-01-25">5 années ago</time></a></li>
+			</ul>
+		</div>
+	</article>
+
+	<article id="post-85" class="post-85 post type-post status-publish format-standard has-post-thumbnail hentry category-actualites tag-internationnal tag-meetup tag-people tag-rencontre tag-social">
+				<div class="post-header-image">
+			<a href="https://golang.io/fr/actualites/rejoignez-nous-sur-meetup/"><img src="https://golang.io/wp-content/uploads/2015/01/Meetup-500x313.jpg" alt="Rejoignez-nous sur Meetup !"></a>
+		</div>
+				<div class="post-info">
+			<a class="post-category category-fade" style="background:#6c5ce7;" data-category-color="#6c5ce7" href="https://golang.io/fr/actualites/">Actualités</a>			<h1 class="post-title"><a href="https://golang.io/fr/actualites/rejoignez-nous-sur-meetup/">Rejoignez-nous sur Meetup !</a></h1>
+			<p class="post-excerpt">Toujours dans le prolongement du traitement de l’actualité liée au langage Go, nous avons créé un compte Meetup afin de pouvoir réunir des personnes de tous niveaux voulant se rencontrer afin de partager leurs...</p>
+			<ul class="post-meta">
+				<li class="post-pinned post-meta-align-left"><i class="fa fa-thumb-tack"></i></li>
+				<li class="post-meta-comments post-meta-align-left"><a href="https://golang.io/fr/actualites/rejoignez-nous-sur-meetup/#comments"><i class="fa fa-comments"></i>0</a></li>
+				<li class="post-meta-likes post-meta-align-left"><span class="sl-wrapper"><a href="https://golang.io/wp-admin/admin-ajax.php?action=process_simple_like&nonce=89291a5a67&post_id=85&disabled=true&is_comment=0" rel="nofollow" class="sl-button sl-button-85" data-nonce="89291a5a67" data-post-id="85" data-iscomment="0" title="J’aime"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"/></svg></span><span class="sl-count">22</span></a><span class="sl-loader"></span></span></li>
+				<li class="post-meta-date post-meta-align-right"><a href="https://golang.io/fr/actualites/rejoignez-nous-sur-meetup/"><time datetime="2015-01-25">5 années ago</time></a></li>
+			</ul>
+		</div>
+	</article>
+
+	<article id="post-81" class="post-81 post type-post status-publish format-video has-post-thumbnail hentry category-videos tag-discussion tag-talk tag-tutoriels tag-tv tag-videos post_format-post-format-video" data-post-id="81">
+		<div class="post-background" style="background-image:url('https://golang.io/wp-content/uploads/2019/03/golang-cover-860x484.jpg');"></div>
+		<div class="post-info">
+			<a href="https://golang.io/fr/videos/golangtv/" class="post-play"><i class="fa fa-play"></i></a>
+			<div class="post-media">
+								<script type="text/javascript">
+					if(typeof window.post_video === 'undefined'){ window.post_video = new Array(); };
+					window.post_video['81'] = '&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/d_npM_Pw3Lk&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;'
+				</script>
+			</div>
+			<a class="post-category category-fade" style="background:#2980b9;" data-category-color="#2980b9" href="https://golang.io/fr/videos/">Vidéos</a>			<h1 class="post-title"><a href="https://golang.io/fr/videos/golangtv/">Vidéos</a></h1>
+			<p class="post-excerpt">De plus en plus de contenu circule à propos du langage Go sur internet et le nom de ce dernier résonne plus fréquemment au sein de conférences, Meetup et autres séminaires ! Il nous est apparu dans ce contexte,...</p>
+			<ul class="post-meta post-meta-dark">
+				<li class="post-pinned post-meta-align-left"><i class="fa fa-thumb-tack"></i></li>
+				<li class="post-meta-comments post-meta-align-left"><a href="https://golang.io/fr/videos/golangtv/#comments"><i class="fa fa-comments"></i>0</a></li>
+				<li class="post-meta-likes post-meta-align-left"><span class="sl-wrapper"><a href="https://golang.io/wp-admin/admin-ajax.php?action=process_simple_like&nonce=89291a5a67&post_id=81&disabled=true&is_comment=0" rel="nofollow" class="sl-button sl-button-81" data-nonce="89291a5a67" data-post-id="81" data-iscomment="0" title="J’aime"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"/></svg></span><span class="sl-count">23</span></a><span class="sl-loader"></span></span></li>
+				<li class="post-meta-date post-meta-align-right"><a href="https://golang.io/fr/videos/golangtv/"><time datetime="2015-01-25">5 années ago</time></a></li>
+			</ul>
+		</div>
+	</article>
+
+	<article id="post-72" class="post-72 post type-post status-publish format-standard has-post-thumbnail hentry category-actualites category-videos tag-andrew-gerrand tag-bonnes-pratiques tag-francesc-campoy-flores tag-meetup tag-paris tag-web">
+				<div class="post-header-image">
+			<a href="https://golang.io/fr/actualites/meetup-go-a-google-paris/"><img src="https://golang.io/wp-content/uploads/2015/01/MeetupGolangParis2014-500x280.jpg" alt="Meetup Go à Google Paris"></a>
+		</div>
+				<div class="post-info">
+			<a class="post-category category-fade" style="background:#6c5ce7;" data-category-color="#6c5ce7" href="https://golang.io/fr/actualites/">Actualités</a>			<h1 class="post-title"><a href="https://golang.io/fr/actualites/meetup-go-a-google-paris/">Meetup Go à Google Paris</a></h1>
+			<p class="post-excerpt">Deux jours avant la conférence DotGo, nous avons eu l&rsquo;occasion de participer à une rencontre réunissant deux visages qui vous seront surement familiers, Andrew Gerrand et Francesc Campoy Flores. En effet le 8...</p>
+			<ul class="post-meta">
+				<li class="post-pinned post-meta-align-left"><i class="fa fa-thumb-tack"></i></li>
+				<li class="post-meta-comments post-meta-align-left"><a href="https://golang.io/fr/actualites/meetup-go-a-google-paris/#comments"><i class="fa fa-comments"></i>0</a></li>
+				<li class="post-meta-likes post-meta-align-left"><span class="sl-wrapper"><a href="https://golang.io/wp-admin/admin-ajax.php?action=process_simple_like&nonce=89291a5a67&post_id=72&disabled=true&is_comment=0" rel="nofollow" class="sl-button sl-button-72" data-nonce="89291a5a67" data-post-id="72" data-iscomment="0" title="J’aime"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"/></svg></span><span class="sl-count">21</span></a><span class="sl-loader"></span></span></li>
+				<li class="post-meta-date post-meta-align-right"><a href="https://golang.io/fr/actualites/meetup-go-a-google-paris/"><time datetime="2015-01-25">5 années ago</time></a></li>
+			</ul>
+		</div>
+	</article>
+
+	<article id="post-54" class="post-54 post type-post status-publish format-standard has-post-thumbnail hentry category-actualites tag-conference tag-dotgo tag-europe tag-france tag-paris tag-rencontre tag-videos">
+				<div class="post-header-image">
+			<a href="https://golang.io/fr/actualites/conference-dotgo-2014/"><img src="https://golang.io/wp-content/uploads/2016/05/DotGo-500x313.jpg" alt="Conférence dotGo 2014"></a>
+		</div>
+				<div class="post-info">
+			<a class="post-category category-fade" style="background:#6c5ce7;" data-category-color="#6c5ce7" href="https://golang.io/fr/actualites/">Actualités</a>			<h1 class="post-title"><a href="https://golang.io/fr/actualites/conference-dotgo-2014/">Conférence dotGo 2014</a></h1>
+			<p class="post-excerpt">Le dernier trimestre 2014 fût assez chargé en surprises et rencontres avec plusieurs évènements programmés au calendrier. Parmi ces événements, pour celles liés au l&rsquo;univers Golang, on pouvait compter...</p>
+			<ul class="post-meta">
+				<li class="post-pinned post-meta-align-left"><i class="fa fa-thumb-tack"></i></li>
+				<li class="post-meta-comments post-meta-align-left"><a href="https://golang.io/fr/actualites/conference-dotgo-2014/#comments"><i class="fa fa-comments"></i>0</a></li>
+				<li class="post-meta-likes post-meta-align-left"><span class="sl-wrapper"><a href="https://golang.io/wp-admin/admin-ajax.php?action=process_simple_like&nonce=89291a5a67&post_id=54&disabled=true&is_comment=0" rel="nofollow" class="sl-button sl-button-54" data-nonce="89291a5a67" data-post-id="54" data-iscomment="0" title="J’aime"><span class="sl-icon"><svg role="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve"><path d="M64 127.5C17.1 79.9 3.9 62.3 1 44.4c-3.5-22 12.2-43.9 36.7-43.9 10.5 0 20 4.2 26.4 11.2 6.3-7 15.9-11.2 26.4-11.2 24.3 0 40.2 21.8 36.7 43.9C124.2 62 111.9 78.9 64 127.5zM37.6 13.4c-9.9 0-18.2 5.2-22.3 13.8C5 49.5 28.4 72 64 109.2c35.7-37.3 59-59.8 48.6-82 -4.1-8.7-12.4-13.8-22.3-13.8 -15.9 0-22.7 13-26.4 19.2C60.6 26.8 54.4 13.4 37.6 13.4z"/></svg></span><span class="sl-count">14</span></a><span class="sl-loader"></span></span></li>
+				<li class="post-meta-date post-meta-align-right"><a href="https://golang.io/fr/actualites/conference-dotgo-2014/"><time datetime="2015-01-25">5 années ago</time></a></li>
+			</ul>
+		</div>
+	</article>
+			</div>
+
+			
+			<nav class="pagination pagination-ajax">
+			<a href="#" class="pagination-load-more">Afficher Plus</a>
+			<span class="pagination-current-page">Page <span class="pagination-active-page">1</span> sur 2</span>
+		</nav>
+	
+	<nav class="pagination pagination-standard">
+				<ul class='page-numbers'>
+	<li><span aria-current='page' class='page-numbers current'>1</span></li>
+	<li><a class='page-numbers' href='https://golang.io/fr/page/2/'>2</a></li>
+</ul>
+		<a href="https://golang.io/fr/page/2/" class="pagination-button pagination-older"><span class="main">Articles plus anciens</span><span class="sub"><i class="fa fa-chevron-right"></i></span></a>	</nav>
+
+
+		</section>
+
+	
+		<div class="clear"></div>
+	</section>
+
+
+	
+	<section class="page-utils">
+		<ul class="page-utils-options">
+			<li class="show-search"><a href="#"><i class="fa fa-search"></i></a></li>
+			<li class="back-to-top"><a href="#"><i class="fa fa-chevron-up"></i></a></li>
+		</ul>
+	</section>
+
+	
+	<section class="page-overlay page-overlay-search">
+		<div class="page-overlay-content">
+			<div class="page-overlay-close"><i class="fa fa-close"></i></div>
+			<form role="search" method="get" class="searchform" action="https://golang.io/fr/">
+				<input type="text" value="" name="s" class="query" placeholder="Rechercher" autocomplete="off">
+				<i class="fa fa-chevron-right search-submit"></i>
+			</form>
+		</div>
+	</section>
+	
+	<section class="page-overlay page-overlay-media">
+		<div class="page-overlay-content">
+			<div class="page-overlay-close"><i class="fa fa-close"></i></div>
+			<div class="overlay-media-embed"></div>
+			<div class="overlay-post-info">
+				<h2 class="post-title"><a href="#"></a></h2>
+				<p class="post-excerpt"></p>
+				<a href="#" class="post-read-more">Lire la suite <i class="fa fa-chevron-right"></i></a>
+			</div>
+		</div>
+	</section>
+	
+	<footer class="page-footer">
+		
+						
+	<section class="footer-widgets">
+		<div class="wrapper">
+
+			<div class="footer-widgets-static">
+				<section class="widget blog_info">
+											<a href="https://golang.io/fr/" class="blog-name">Golang I/O</a>
+										<hr>
+					<p>Découvrir et apprendre Go</p>
+				</section>
+				<nav class="social">
+					<ul>
+													<li><a href="https://twitter.com/golangio" target="_blank" class="twitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+																															<li><a href="https://plus.google.com/communities/106187192023817377228" target="_blank" class="google" title="Google+"><i class="fa fa-google"></i></a></li>
+																									<li><a href="https://youtube.com/c/golangtv" target="_blank" class="youtube" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+																			<li><a href="https://www.instagram.com/golang.io" target="_blank" class="instagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+																			<li><a href="https://www.linkedin.com/groups/8242437" target="_blank" class="linkedin" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+																			<li><a href="https://github.com/golangio" target="_blank" class="github" title="GitHub"><i class="fa fa-github"></i></a></li>
+																									<li><a href="https://www.flickr.com/photos/golangio/" target="_blank" class="flickr" title="Flickr"><i class="fa fa-flickr"></i></a></li>
+																																																											</ul>
+				</nav>
+			</div>
+
+			<div class="footer-widgets-custom">
+				<section class="widget"><h3 class="widget-title">Informations</h3><hr><div class="menu-footer-fr-container"><ul id="menu-footer-fr" class="menu"><li id="menu-item-148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-148"><a href="https://golang.io/fr/information-cookie/">Cookies</a></li>
+</ul></div></section><section class="widget"><h3 class="widget-title">Catégories</h3><hr>		<ul>
+				<li class="cat-item cat-item-9"><a href="https://golang.io/fr/actualites/" >Actualités</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="https://golang.io/fr/tutoriels/" >Tutoriels</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="https://golang.io/fr/videos/" >Vidéos</a>
+</li>
+		</ul>
+			</section><section class="widget"><h3 class="widget-title">Langues</h3><hr><ul>
+	<li class="lang-item lang-item-2 lang-item-fr lang-item-first current-lang"><a lang="fr-FR" hreflang="fr-FR" href="https://golang.io/fr/">Français</a></li>
+	<li class="lang-item lang-item-5 lang-item-en"><a lang="en-US" hreflang="en-US" href="https://golang.io/en/">English</a></li>
+</ul>
+</section>			</div>
+
+		</div>
+	</section>
+		
+	<section class="footer-copyright">
+		<div class="wrapper">
+			<section class="footer-copyright-disclaimer">
+				<p class="main">
+										Copyright &copy; <a href="https://golang.io/fr/">Golang I/O</a>. 2019 &bull; Tous droits réservés.
+									</p>
+				<p class="alt">
+										<span class="ecko"><a target="_blank" href="http://ecko.me/themes/wordpress/onyx/">Onyx WordPress Theme</a> by <a target="_blank" href="http://ecko.me">EckoThemes</a>.</span>
+					<span class="wordpress">Publié avec <a target="_blank" href="http://wordpress.org">WordPress</a>.</span>
+									</p>
+			</section>
+			<ul class="footer-copyright-utils">
+				<li><a href="#" class="show-search"><i class="fa fa-search"></i></a></li>
+				<li><a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a></li>
+			</ul>
+		</div>
+	</section>
+
+	</footer>
+
+	<script type='text/javascript' src='https://golang.io/wp-content/plugins/eckoplugin/assets/js/eckoplugin.js?ver=3.1.0'></script>
+<script type='text/javascript' src='https://golang.io/wp-content/plugins/nanoninja-shortcode/assets/js/nnjplugin.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://golang.io/wp-content/plugins/prismatic/lib/highlight/js/highlight-core.js'></script>
+<script type='text/javascript'>
+hljs.initHighlightingOnLoad();
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var simpleLikes = {"ajaxurl":"https:\/\/golang.io\/wp-admin\/admin-ajax.php","like":"J\u2019aime","unlike":"Unlike"};
+var ecko_theme_vars = {"general_hidecomments":"false","general_disable_syntax_highlighter":"false","pagination_enable_ajax":"1","topbar_sticky":"false","localization_no_more_posts":"No More Articles","localization_fetching_posts":"R\u00e9cup\u00e9ration des articles","localization_load_more":"Afficher Plus","localization_email_address":"Adresse Email","localization_view_comments":"Afficher les commentaires"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://golang.io/wp-content/themes/onyx/assets/js/theme.min.js?ver=1.6.0'></script>
+<script type='text/javascript' src='https://golang.io/wp-includes/js/comment-reply.min.js?ver=5.1.3'></script>
+<script type='text/javascript' src='https://golang.io/wp-includes/js/wp-embed.min.js?ver=5.1.3'></script>
+</body>
+</html>
